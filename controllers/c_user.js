@@ -9,6 +9,10 @@ exports.showSignin = (req,res) =>{
     res.render('signin.html');
 };
 
+
+
+
+
 //登录表单请求
 exports.handleSignin = (req,res) => {
     //获取表单数据
