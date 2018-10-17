@@ -42,3 +42,10 @@ exports.handleSignin = (req,res) => {
         });
     });
 }
+//用户退出
+exports.handleSignout = (req,res) => {
+    //当用户退出时，清除session保存的用户信息
+    delete req.session.user;
+    //跳转登录页
+    res.redirect('/signin');
+}

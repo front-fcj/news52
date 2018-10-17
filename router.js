@@ -8,9 +8,13 @@ const c_topic = require('./controllers/c_topic');
 const router = express.Router();
 
 //3.router.get() 渲染登录页请求
-router.get('./signin',c_user.showSignin)
-    .post('./signin',c_user.handleSignin)
-    .get('/',c_topic.showTopic);
+router.get('/signin',c_user.showSignin)
+    .post('/signin',c_user.handleSignin)
+    .get('/',c_topic.showTopic)
+    .get('/topic/create',c_topic.createTopic)
+    .post('/createTopic',c_topic.handleCreateTopic)
+    .get('/topic/:topicID',c_topic.showDetail)
+    .get('/signout',c_user.handleSignout);
 
 //4.导出router
 module.exports = router;
